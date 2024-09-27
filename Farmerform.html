@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Easiest Way to Add Input Masks to Your Forms</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Farmerform.css">
+</head>
+<body>
+    <div class="registration-form">
+        <form>
+            <div class="form-icon">
+                <span><i class="icon icon-user"></i></span>
+            </div>
+            <label>Date</label>
+            <div class="form-group">
+                <input type="date" class="form-control item" id="calander-date" placeholder="dd/mm/yyyy">
+            </div>
+            
+            <label>Farmer Name</label>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="Farmername" placeholder="Farmer Name">
+            </div>
+            <label>Acre</label>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="Acer" placeholder="Acre">
+            </div>
+            <label>Village</label>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="Village" placeholder="Village">
+            </div>
+            <label>Taluka</label>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="Taluka" placeholder="Taluka">
+            </div>
+            <label>District</label>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="District" placeholder="District">
+            </div>
+            <label>Khata No.</label>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="KhataNo" placeholder="Khata No.">
+            </div>
+            <label>Survey No.</label>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="SurveyNo" placeholder="Survey No.">
+            </div>
+            <label>Hector</label>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="Hector" placeholder="Acreage">
+            </div>
+            <label>Crop</label>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="Crop" placeholder="Crop">
+            </div>
+            <label>Adhar Card No.</label>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="AdharCardNo" placeholder="Adhar Card No.">
+            </div>
+            <label>Latitude, Longitude</label>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="Latitude" placeholder="Latitude, Longitude">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-block create-account">Submit</button>
+            </div>
+        </form>
+        <div id="output" class="mt-3"></div> <!-- Add this element to display output -->
+        <div class="social-media">
+            <h5>Sign up with social media</h5>
+            <div class="social-icons">
+                <a href="#"><i class="icon-social-facebook" title="Facebook"></i></a>
+                <a href="#"><i class="icon-social-google" title="Google"></i></a>
+                <a href="#"><i class="icon-social-twitter" title="Twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="script.js"></script>
+   
+</body>
+</html>

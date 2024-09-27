@@ -1,0 +1,36 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 1.6;
+}
+.content-section.form-sec-1 {
+text-align: end;
+}
+.container.Farmerdetails-form {
+    width: fit-content;
+}
+.Subject-para1{
+    display: flex;
+    justify-content: center;
+}
+.subject-title1 {
+    text-align: center;
+}
+.document-header {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.document-content {
+    margin: 20px;
+}
+.content-section {
+    margin-bottom: 20px;
+}
+.highlight {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.footer-note {
+    text-align: end;
+    margin-top: 20px;
+}
