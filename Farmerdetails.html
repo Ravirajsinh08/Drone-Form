@@ -76,6 +76,8 @@
                 <li>સંયુક્ત ખાતેદારના કિસ્સામાં બાંહેધરી પત્રક</li>
             </ol>
         </div>
+        <button id="saveFullPage" class="btn btn-primary">Save as PDF</button>
+
     </div>
 
     <!-- Bootstrap JS and dependencies -->
@@ -98,48 +100,51 @@
         });
     </script>
     <script>
-        $(document).ready(function() {
-            // Set the date to today's date
-            let today = new Date();
-            let day = String(today.getDate()).padStart(2, '0');
-            let month = String(today.getMonth() + 1).padStart(2, '0');
-            let year = today.getFullYear();
-            let formattedDate = day + '/' + month + '/' + year;
-            $('#formDate').text(formattedDate);
-    
-            // Function to save full page as PDF
-            $('#saveFullPage').on('click', function() {
-                const { jsPDF } = window.jspdf;
-    
-                // Use html2canvas to capture the content of the page
-                html2canvas(document.querySelector(".Farmerdetails-form")).then(canvas => {
-                    const imgData = canvas.toDataURL("image/png");
-                    const pdf = new jsPDF();
-    
-                    // Calculate PDF dimensions
-                    const imgWidth = 190; // Set width to match A4 paper
-                    const pageHeight = pdf.internal.pageSize.height;
-                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
-                    let heightLeft = imgHeight;
-    
-                    let position = 0;
-    
-                    // Add image to PDF and handle multiple pages
-                    pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
-                    heightLeft -= pageHeight;
-    
-                    while (heightLeft >= 0) {
-                        position = heightLeft - imgHeight;
-                        pdf.addPage();
-                        pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
-                        heightLeft -= pageHeight;
-                    }
-    
-                    // Save the PDF
-                    pdf.save("full_page_application_form.pdf");
-                });
-            });
+     $(document).ready(function () {
+    // Set the date to today's date
+    let today = new Date();
+    let day = String(today.getDate()).padStart(2, '0'); // Get day
+    let month = String(today.getMonth() + 1).padStart(2, '0'); // Get month
+    let year = today.getFullYear(); // Get year
+
+    // Format date as dd/mm/yyyy
+    let formattedDate = day + '/' + month + '/' + year;
+    $('#formDate').text(formattedDate); // Display the formatted date
+
+    // Function to save the full page as PDF
+    $('#saveFullPage').on('click', function () {
+        const { jsPDF } = window.jspdf;
+
+        // Use html2canvas to capture the content of the page
+        html2canvas(document.querySelector(".Farmerdetails-form")).then(canvas => {
+            const imgData = canvas.toDataURL("image/png");
+            const pdf = new jsPDF();
+
+            // Calculate PDF dimensions
+            const imgWidth = 190; // Set width to match A4 paper
+            const pageHeight = pdf.internal.pageSize.height;
+            const imgHeight = (canvas.height * imgWidth) / canvas.width;
+            let heightLeft = imgHeight;
+
+            let position = 0;
+
+            // Add image to PDF and handle multiple pages
+            pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+
+            while (heightLeft >= 0) {
+                position = heightLeft - imgHeight;
+                pdf.addPage();
+                pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+            }
+
+            // Save the PDF locally
+            pdf.save("full_page_application_form.pdf");
         });
+    });
+});
+
     </script>
     
 </body>
